@@ -3,8 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
 .AddGraphQLServer()
 .AddQueryType<Query>();
-//.AddJsonSupport();
-//.InitializeOnStrartup();
+
 builder.Services.AddScoped<IRestApiQuery, RestApiQuery>();
 
 var app = builder.Build();
