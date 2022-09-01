@@ -25,10 +25,6 @@ namespace TestingApp.Test
             public async Task<string> CreateAsync()
             {
                var response = await _http.GetStringAsync("https://xkcd.com/1/info.0.json");
-            //    if(response.StatusCode == HttpStatusCode.BadRequest)
-            //    {
-            //         return null; 
-            //    }
                return response;
             }
         }
@@ -36,8 +32,6 @@ namespace TestingApp.Test
         [Fact]
         public async void AddIcomic_Success()
         {
-
-
             var comicService = new ComicService(_dataComicServiceMock.Object);
             var http = new HttpClient();
             var service = new Service(http);
